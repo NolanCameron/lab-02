@@ -72,9 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("MainActivity", selectedCity);
         cityAdapter.remove(selectedCity);
-        cityList.setItemChecked(-1, false);
         cityAdapter.notifyDataSetChanged();
+        cityList.clearChoices();
+        cityList.setAdapter(cityAdapter);
         cityList.requestLayout();
+
     }
 
     public void confirmCity(View view){
